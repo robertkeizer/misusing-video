@@ -1,0 +1,12 @@
+{
+	"name": "misusing-video",
+	"version": "0.0.1",
+	"dependencies": {
+		"async": "^2.6.1",
+		"joi": "^13.6.0",
+		"mocha": "^5.2.0"
+	},
+	"scripts": {
+		"test": "./node_modules/mocha/bin/mocha"
+	}
+}
