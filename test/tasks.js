@@ -28,6 +28,7 @@ Tasks.prototype.newTemporaryMountPath = function( cb ){
 	} ], function( err ){
 		self._newCleanupFunc( function( cb ){
 			fs.rmdir( _pathToUse );
+			return cb( null );
 		} );
 		return cb( err, _pathToUse );
 	} );

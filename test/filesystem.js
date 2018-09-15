@@ -12,6 +12,9 @@ describe( "Filesystem", function( ){
 
 	describe( "Mount", function( ){
 		it.only( "Can be called", function( cb ){
+
+			this.timeout( 30000 );
+
 			const tasks = new Tasks( );
 			let mountPathToUse = "";
 			async.waterfall( [ function( cb ){
