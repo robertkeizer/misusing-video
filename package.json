@@ -3,6 +3,7 @@
 	"version": "0.0.1",
 	"dependencies": {
 		"async": "^2.6.1",
+		"fuse-bindings": "^2.11.2",
 		"joi": "^13.6.0",
 		"mocha": "^5.2.0"
 	},
