@@ -14,7 +14,7 @@ Generator.prototype.validEncoderConfig = function( ){
 Generator.prototype.validDebugFilesystemConfig = function( ){
 	return {
 		debug: true,
-		youtubeApiKey: "AIzaSyAT40U20h4k2Nc9WCpqf5o9mbdeOW4E1CQ", // This is IP limited - good luck using it. It's just for dev anyways. Go fuck yourself.
+		youtubeClientId: "821901397786-64phqfa2ilfg8k4jde6hnqtsmdpbjqup.apps.googleusercontent.com",
 		encoderOptions: this.validEncoderConfig( )
 	}
 };

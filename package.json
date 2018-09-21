@@ -3,9 +3,11 @@
 	"version": "0.0.1",
 	"dependencies": {
 		"async": "^2.6.1",
+		"express": "^4.16.3",
 		"fuse-bindings": "^2.11.2",
 		"joi": "^13.6.0",
-		"mocha": "^5.2.0"
+		"mocha": "^5.2.0",
+		"youtube-api": "^2.0.9"
 	},
 	"scripts": {
 		"test": "./node_modules/mocha/bin/mocha"
