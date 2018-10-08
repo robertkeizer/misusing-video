@@ -11,7 +11,7 @@ describe( "Filesystem", function( ){
 	} );
 
 	describe( "Mount", function( ){
-		it.only( "Can be called", function( cb ){
+		it( "Can be called", function( cb ){
 
 			this.timeout( 30000 );
 

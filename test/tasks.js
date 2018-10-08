@@ -4,6 +4,7 @@ const fs		= require( "fs" );
 
 const Generator		= require( "./generator" );
 const Filesystem	= require( "../lib/filesystem" );
+const Auth		= require( "../lib/auth" );
 
 const Tasks = function( config ){
 	this.config	= config;
@@ -32,6 +33,24 @@ Tasks.prototype.newTemporaryMountPath = function( cb ){
 		} );
 		return cb( err, _pathToUse );
 	} );
+};
+
+Tasks.prototype.newAuth = function( cb ){
+	const self = this;
+	async.waterfall( [ function( cb ){
+		const authConfigToUse	= self.generate.validAuthConfig( );
+		const authInstance = new Auth( authConfigToUse, function( err ){
+			setImmediate( function( ){
+				return cb( err, authInstance );
+			} );
+		} );
+	}, function( authInstance, cb ){
+		self._newCleanupFunc( function( cb ){
+			authInstance.shutdown( cb );
+		} );
+
+		return cb( null, authInstance );
+	} ], cb );
 };
 
 Tasks.prototype._newCleanupFunc = function( func ){

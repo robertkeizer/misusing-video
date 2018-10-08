@@ -3,6 +3,7 @@
 	"version": "0.0.1",
 	"dependencies": {
 		"async": "^2.6.1",
+		"config": "^2.0.1",
 		"express": "^4.16.3",
 		"fuse-bindings": "^2.11.2",
 		"joi": "^13.6.0",
@@ -10,6 +11,6 @@
 		"youtube-api": "^2.0.9"
 	},
 	"scripts": {
-		"test": "./node_modules/mocha/bin/mocha"
+		"test": "NODE_ENV=testing ./node_modules/mocha/bin/mocha"
 	}
 }
