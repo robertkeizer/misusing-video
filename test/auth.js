@@ -12,8 +12,10 @@ describe( "Auth", function( ){
 			tasks.newAuth( cb );
 		}, function( authInstance, cb ){
 
-			console.log( "I have auth instance of " );
-			console.log( authInstance );
+			if( !( authInstance instanceof Auth ) ){
+				return cb( "Not instance of auth" );
+			}
+
 			return cb( null );
 
 		}, function( cb ){
