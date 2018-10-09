@@ -14,9 +14,15 @@ const Tasks = function( config ){
 };
 
 Tasks.prototype.newValidDebugFilesystem = function( cb ){
-	const filesystem = new Filesystem( this.generate.validDebugFilesystemConfig( ) );
+
+	const configToUse = this.generate.validDebugFilesystemConfig( );
+	const filesystem = new Filesystem( configToUse );
 	filesystem.once( "ready", function( ){
 		return cb( null, filesystem );
+	} );
+
+	this._newCleanupFunc( function( cb ){
+		filesystem.shutdown( cb );
 	} );
 };
 

@@ -14,7 +14,8 @@ Generator.prototype.validEncoderConfig = function( ){
 Generator.prototype.validDebugFilesystemConfig = function( ){
 	return {
 		debug: true,
-		encoderOptions: this.validEncoderConfig( )
+		encoderOptions: this.validEncoderConfig( ),
+		auth: this.validAuthConfig( )
 	}
 };
 
