@@ -59,6 +59,32 @@ Tasks.prototype.newAuth = function( cb ){
 	} ], cb );
 };
 
+Tasks.prototype.newMountedFilesystem = function( cb ){
+	const self = this;
+	let _mountPath = undefined;
+	async.waterfall( [ function( cb ){
+
+		self.newTemporaryMountPath( cb );
+
+	}, function( mountPath ){
+		_mountPath = mountPath;
+		self.newValidDebugFilesystem( function( err, filesystem ){
+			return cb( err, filesystem );
+		} );
+
+	}, function( filesystem, cb ){
+
+		filesystem.mount( _mountPath, function( err ){
+			return cb( err, filesystem );
+		} );
+
+		self._newCleanupFunc( function( cb ){
+			filesystem.unmount( _mountPath, cb );
+		} );
+		
+	} ], cb );
+};
+
 Tasks.prototype._newCleanupFunc = function( func ){
 	this._cleanupFuncs.push( func );
 };

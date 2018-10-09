@@ -22,7 +22,7 @@ describe( "Auth", function( ){
 		} ], cb );
 	} );
 
-	it( "_generateAuthUrl returns a valid url..", function( cb ){
+	it.skip( "_generateAuthUrl returns a valid url..", function( cb ){
 		this.timeout( 120 * 1000 );
 		const tasks = new Tasks( config );
 		async.waterfall( [ ( cb ) => {
