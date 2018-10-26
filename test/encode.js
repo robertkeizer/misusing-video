@@ -29,12 +29,13 @@ describe( "Encoder", function( ){
 		
 		encoder.once( "ready", function( ){
 			encoder.once( "fragment", function( data ){
-				encoder.shutdown( cb );
+				console.log( "I have a fragment" );
+				return cb( null );
 			} );
 			encoder.encode( "Test String" );
 
 			setTimeout( ( ) => {
-				encoder.finishCurrentFragment( ( err ) => { });
+				encoder.shutdown( ( ) => { } );
 			}, 500 );
 		} );
 	} );
