@@ -1,0 +1,4 @@
+These two seem to work fine..
+
+nc localhost 1337 | ffmpeg -f image2pipe -framerate 1 -i - -c:v libx264 -vf format=yuv420p -r 25 out.mp4
+cat test-images/*.png | nc -l 1337
