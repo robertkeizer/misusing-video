@@ -1,6 +1,6 @@
 const Encoder = require( "../lib/encoder" );
 
-describe( "Encoder", function( ){
+describe.only( "Encoder", function( ){
 	it( "Emits a ready event", function( cb ){
 		const encoder = new Encoder( );
 		encoder.once( "ready", function( ){
@@ -16,6 +16,7 @@ describe( "Encoder", function( ){
 		} );
 
 		encoder.once( "data", function( data ){
+			console.log( data );
 			return cb( null );
 		} );
 	} );

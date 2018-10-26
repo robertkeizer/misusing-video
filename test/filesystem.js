@@ -38,7 +38,8 @@ describe( "Filesystem", function( ){
 	} );
 
 	describe( "readdir", function( ){
-		it.only( "Returns an array of results", function( cb ){
+		it( "Returns an array of results", function( cb ){
+			this.timeout( 30000 );
 			const tasks = new Tasks( );
 			async.waterfall( [ function( cb ){
 				tasks.newMountedFilesystem( cb );
