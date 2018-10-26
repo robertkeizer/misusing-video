@@ -36,7 +36,7 @@ describe( "Encoder", function( ){
 
 			setTimeout( ( ) => {
 				encoder.shutdown( ( ) => { } );
-			}, 500 );
+			}, 3000 );
 		} );
 	} );
 } );
