@@ -8,6 +8,8 @@
 		"fuse-bindings": "^2.11.2",
 		"joi": "^13.6.0",
 		"mocha": "^5.2.0",
+		"node-qrdecode": "^1.0.3",
+		"node-quirc": "^1.0.0",
 		"tmp": "0.0.33",
 		"youtube-api": "^2.0.9"
 	},

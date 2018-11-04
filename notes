@@ -2,3 +2,16 @@ These two seem to work fine..
 
 nc localhost 1337 | ffmpeg -f image2pipe -framerate 1 -i - -c:v libx264 -vf format=yuv420p -r 25 out.mp4
 cat test-images/*.png | nc -l 1337
+
+# 
+ffmpeg -i out.mp4 -r 1 test%d.png
+
+
+
+0.png => Fri 26 Oct 2018 14:24:29 CDT
+test1.png => Fri 26 Oct 2018 14:24:29 CDT
+
+
+
+input - 41.png => Fri 26 Oct 2018 14:25:11 CDT
+output - 44.png => Fri 26 Oct 2018 14:24:38

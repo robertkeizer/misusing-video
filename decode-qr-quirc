@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+const fs	= require( "fs" );
+const quirc	= require( "node-quirc" );
+
+const die = function( msg ){
+	console.log( msg );
+	process.exit(1);
+};
+const fileToRead = process.argv[2];
+
+
+fs.readFile( fileToRead, ( err, data ) => {
+	if( err ){ return die( err ); }
+	quirc.decode( data, ( err, codes ) => {
+		if( err ){ return die( err ); }
+		console.log( codes );
+		process.exit(0);
+	} );
+} );

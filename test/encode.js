@@ -23,7 +23,7 @@ describe( "Encoder", function( ){
 		} );
 	} );
 
-	it.only( "Calling encode and then calling .finishCurrentFragment results in fragment being emitted.", function( cb ){
+	it.skip( "Calling encode and then calling .finishCurrentFragment results in fragment being emitted.", function( cb ){
 		this.timeout( 30000 );
 		const encoder = new Encoder( );
 		
