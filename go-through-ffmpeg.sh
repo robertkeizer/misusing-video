@@ -20,5 +20,6 @@
 # diff test-images/1.png output-images/1.png
 
 # Step 4 - read the images back with zbarimg or similar.
+# Note that these should be identical 
 # zbarimg test-images/1.png
 # zbarimg output-images/1.png

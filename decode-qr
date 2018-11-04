@@ -1,4 +1,8 @@
 #!/usr/bin/env node
+
+# Currently not working because of 
+# canvas dependencies 
+
 const fs	= require( "fs" );
 const qrdecode	= require( "node-qrdecode" );
 

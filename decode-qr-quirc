@@ -1,4 +1,8 @@
 #!/usr/bin/env node
+
+# This should work if node-quirc works.. haven't
+# been able to get it going on the macos because of some deps.
+
 const fs	= require( "fs" );
 const quirc	= require( "node-quirc" );
 

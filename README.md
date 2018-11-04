@@ -1,6 +1,7 @@
 # FAIR WARNING - THIS IS WORK IN PROGRESS
 
 ## Current status
+ * Check `go-through-ffmpeg.sh`
  * Broken.
  * Barely functional.
  * FUSE filesystem should be worked on a lot.
